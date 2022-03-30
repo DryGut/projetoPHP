@@ -1,37 +1,22 @@
-<?php
-$categorias = [];
-$categorias[] = 'infantil';
-$categorias[] = 'adolecentes';
-$categorias[] = 'adultos';
-//print_r($categorias);
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulário de Inscrição</title>
+    <meta name="author" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width inicial-scale*1">
+  </head>
+<body>
 
-$nome = 'Renato';
-$idade = 37;
-//var_dump($nome);
-//var_dump($idade);
+<p>FORMULÁRIO DE INSCRIÇÃO DOS ATLETAS</p>
 
-if($idade >= 6 && $idade <= 12)
-{
-  for($i == 0; $i <= count($categorias); $i++)
-    {
-      if($categorias[$i] == 'infantil')
-        echo "O Atleta  $nome  inscrito na categoria " .$categorias[$i];
-    }
-}
-else if($idade >= 13 && $idade <= 17)
-{
-  for($i == 0; $i <= count($categorias); $i++)
-    {
-      if($categorias[$i] == 'adolecentes')
-        echo "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
-    }
-}
-else
-{
-  for($i == 0; $i <= count($categorias); $i++)
-    {
-      if($categorias[$i] == 'adultos')
-        echo "O Atleta  $nome  esta inscrito a categoria " .$categorias[$i];
-    }
-}
-?>
+<form action="scrip.php" method="post">
+  <p>Seu Nome: <input type="text" name="nome" /></p>
+  <p>Sua idade: <input type="text" name="idade" /></p>
+  <p><input type="submit" /></p>
+</form>
+
+</body>
+
+</html>
