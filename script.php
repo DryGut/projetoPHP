@@ -31,7 +31,7 @@ else
   for($i == 0; $i <= count($categorias); $i++)
     {
       if($categorias[$i] == 'adultos')
-        echo "O Atleta  $nome  esta inscrito a categoria " .$categorias[$i];
+        echo "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
     }
 }
 ?>
