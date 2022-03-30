@@ -11,10 +11,10 @@
 
 <p>FORMULÁRIO DE INSCRIÇÃO DOS ATLETAS</p>
 
-<form action="scrip.php" method="post">
+<form action="script.php" method="post">
   <p>Seu Nome: <input type="text" name="nome" /></p>
   <p>Sua idade: <input type="text" name="idade" /></p>
-  <p><input type="submit" /></p>
+  <p><input type="submit" value="Enviar dados do Atleta"/></p>
 </form>
 
 </body>

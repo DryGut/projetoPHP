@@ -5,10 +5,10 @@ $categorias[] = 'adolescentes';
 $categorias[] = 'adultos';
 //print_r($categorias);
 
-$nome = 'Renato';
-$idade = 15;
-//var_dump($nome);
-//var_dump($idade);
+$nome = $_POST['nome'];
+$idade = $_POST['idade'];
+var_dump($nome);
+var_dump($idade);
 
 if($idade >= 6 && $idade <= 12)
 {
