@@ -3,12 +3,31 @@ $categorias = [];
 $categorias[] = 'infantil';
 $categorias[] = 'adolescentes';
 $categorias[] = 'adultos';
-//print_r($categorias);
+
 
 $nome = $_POST['nome'];
 $idade = $_POST['idade'];
-//var_dump($nome);
-//var_dump($idade);
+
+if(empty($nome))
+{
+  echo "A opção nome não pode estar vazia";
+  return;
+}
+if(strlen($nome) < 3)
+{
+  echo "Nome Inválido";
+  return;
+}
+if(strlen($nome) > 40)
+{
+  echo "Nome Inválido";
+  return;
+}
+if(!is_numeric($idade))
+{
+  echo "Formato de idade inválido";
+  return;
+}
 
 if($idade >= 6 && $idade <= 12)
 {
