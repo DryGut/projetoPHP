@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $categorias = [];
 $categorias[] = 'infantil';
 $categorias[] = 'adolescentes';
@@ -10,47 +13,63 @@ $idade = $_POST['idade'];
 
 if(empty($nome))
 {
-  echo "A opção nome não pode estar vazia";
+  $_SESSION['mensagem-de-erro'] = "A opção nome não pode estar vazia";
+  header(string('location: index.php'));
   return;
 }
-if(strlen($nome) < 3)
+else if(strlen($nome) < 3)
 {
-  echo "Nome Inválido";
+  $_SESSION['mensagem-de-erro'] = "Formato Invalido";
+  header(string('location: index.php'));
   return;
 }
-if(strlen($nome) > 40)
+else if(strlen($nome) > 40)
 {
-  echo "Nome Inválido";
+  $_SESSION['mensagem-de-erro'] = "Tamanho Invalido";
+  header(string('location: index.php'));
   return;
 }
-if(!is_numeric($idade))
+else if(!is_numeric($idade))
 {
-  echo "Formato de idade inválido";
+  $_SESSION['mensagem-de-erro'] = "Numero Invalido";
+  header(string('location: index.php'));
   return;
 }
 
 if($idade >= 6 && $idade <= 12)
 {
-  for($i == 0; $i <= count($categorias); $i++)
+  for($i = 0; $i <= count($categorias); $i++)
     {
       if($categorias[$i] == 'infantil')
-        echo "O Atleta  $nome  inscrito na categoria " .$categorias[$i];
+      {
+        $_SESSION['mensagem-de-sucesso'] = "O Atleta  $nome  inscrito na categoria " .$categorias[$i];
+        header(string('location: index.php'));
+        return;
+      }
     }
 }
 else if($idade >= 13 && $idade <= 17)
 {
-  for($i == 0; $i <= count($categorias); $i++)
+  for($i = 0; $i <= count($categorias); $i++)
     {
       if($categorias[$i] == 'adolescentes')
-        echo "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
+      {
+        $_SESSION['mensagem-de-sucesso'] = "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
+        header(string('location: index.php'));
+        return;
+      }
     }
 }
 else
 {
-  for($i == 0; $i <= count($categorias); $i++)
+  for($i = 0; $i <= count($categorias); $i++)
     {
       if($categorias[$i] == 'adultos')
-        echo "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
+      {
+        $_SESSION['mensagem-de-sucesso'] = "O Atleta  $nome  esta inscrito na categoria " .$categorias[$i];
+        header(string('location: index.php'));
+        return;
+      }
     }
 }
 ?>
